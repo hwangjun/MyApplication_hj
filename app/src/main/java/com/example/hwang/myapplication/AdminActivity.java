@@ -203,8 +203,9 @@ public class AdminActivity extends AppCompatActivity {
             userList = new ArrayList<>();
             saveList = new ArrayList<>();
 
+            int id = 0;
             while (cursor.moveToNext()) {
-                int id = cursor.getInt(cursor.getColumnIndex("_id"));
+                id += 1;
                 String userId = cursor.getString(cursor.getColumnIndex("id"));
                 String userName = cursor.getString(cursor.getColumnIndex("name"));
                 String userPwd = cursor.getString(cursor.getColumnIndex("pwd"));

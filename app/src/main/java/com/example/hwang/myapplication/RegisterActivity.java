@@ -2,10 +2,12 @@ package com.example.hwang.myapplication;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -102,9 +104,22 @@ public class RegisterActivity extends Activity {
                 //통과
                 boolean registerChk =insert();
                 if(registerChk) {
-                    //초기화
-                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
-                    startActivity(intent);
+                    //성공알림
+                    String id = editTextId.getText().toString();
+                    AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                    builder.setTitle("회원가입 성공")
+                            .setMessage(id + " 님  회원가입에 성공하였습니다.")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    //초기화
+                                    Intent intent = new Intent(RegisterActivity.this,LoginActivity.class);
+                                    startActivity(intent);
+                                }
+                            });
+                    builder.create();
+                    builder.show();
+
                 }
             } else {
                 //실패

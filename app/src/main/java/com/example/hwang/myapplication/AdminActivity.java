@@ -8,15 +8,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -52,7 +48,7 @@ public class AdminActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
         actionBar.setDisplayHomeAsUpEnabled(true);
-        search = (EditText) findViewById(R.id.search);
+        //search = (EditText) findViewById(R.id.search);
 
         db = new UserDB(this);
         db.open();
@@ -80,7 +76,7 @@ public class AdminActivity extends AppCompatActivity {
 
 
         //검색 이벤트
-        search.addTextChangedListener(new TextWatcher() {
+/*        search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -97,7 +93,7 @@ public class AdminActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
 
             }
-        });
+        });*/
 
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);

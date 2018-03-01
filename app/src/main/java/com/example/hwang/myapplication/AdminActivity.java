@@ -109,7 +109,7 @@ public class AdminActivity extends AppCompatActivity {
 
                 int id = menuItem.getItemId();
                 switch (id) {
-                    case R.id.navigation_item_alluser:  //전체회원보기
+                    case R.id.navigation_item_home:  //홈메뉴
                         //Toast.makeText(AdminActivity.this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
 
                      /*   doWhileCursorToArray();
